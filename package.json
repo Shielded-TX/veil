@@ -1,0 +1,10 @@
+{
+  "name": "veil",
+  "packageManager": "yarn@4.11.0",
+  "dependencies": {
+    "@aztec/accounts": "v4.2.0",
+    "@aztec/aztec.js": "v4.2.0",
+    "@aztec/kv-store": "v4.2.0",
+    "@aztec/wallets": "v4.2.0"
+  }
+}
