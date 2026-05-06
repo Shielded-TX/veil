@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "test": "tsx src/integration.test.ts",
+    "demo": "LOG_LEVEL=warn tsx src/demo.ts",
+    "check-privacy": "LOG_LEVEL=warn tsx src/check_privacy.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
