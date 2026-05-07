@@ -1,0 +1,141 @@
+.root {
+  background: var(--zk-dim);
+  border: 1px solid var(--zk-glow);
+  border-radius: var(--r-lg);
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.rootError {
+  background: var(--exposed-dim);
+  border-color: rgba(255, 87, 87, 0.25);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+/* pulsing orb */
+.orb {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.orbActive {
+  background: var(--zk);
+  box-shadow: 0 0 0 3px var(--zk-dim);
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+.orbError { background: var(--exposed); }
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 3px var(--zk-dim); }
+  50%       { box-shadow: 0 0 0 6px transparent; }
+}
+
+.title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--zk);
+  flex: 1;
+}
+
+.rootError .title { color: var(--exposed); }
+
+.tagZk {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--zk);
+  background: rgba(139, 127, 255, 0.12);
+  padding: 2px 7px;
+  border-radius: 3px;
+  opacity: 0.8;
+}
+
+/* progress steps */
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 2px 0;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 12px;
+  color: var(--text-3);
+  transition: color var(--ease);
+}
+
+.step.stepDone   { color: var(--zk); }
+.step.stepActive { color: var(--text-1); }
+
+.stepDot {
+  width: 16px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.step.stepDone .stepDot  { color: var(--zk); }
+.step.stepActive .stepDot { color: var(--zk); }
+
+.stepLabel { flex: 1; }
+
+.stepActive_tag {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--zk);
+  opacity: 0.7;
+}
+
+/* inline spinner for the active step */
+.spinner {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1.5px solid rgba(139, 127, 255, 0.25);
+  border-top-color: var(--zk);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  vertical-align: middle;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.detail {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--zk);
+  opacity: 0.75;
+  word-break: break-word;
+}
+
+.footer {
+  font-size: 11px;
+  color: var(--text-3);
+  line-height: 1.6;
+  padding-top: 8px;
+  border-top: 1px solid rgba(139, 127, 255, 0.10);
+}

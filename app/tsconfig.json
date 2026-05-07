@@ -16,6 +16,7 @@
     },
     "include": [
         "src",
+        "artifacts",
         "../artifacts",
         "../lib/merkle/src/tree.ts"
     ]

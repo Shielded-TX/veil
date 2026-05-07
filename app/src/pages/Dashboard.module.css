@@ -1,0 +1,293 @@
+.page { display: flex; flex-direction: column; gap: 16px; }
+
+/* ── Hero ─────────────────────────────────────────────────── */
+
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.heroLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.heroAvatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: #07090F;
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
+.heroName {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  margin-bottom: 4px;
+}
+
+.heroAddr { font-size: 10.5px; }
+
+.regBadge, .auditorBadge {
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: opacity var(--ease);
+  white-space: nowrap;
+}
+
+.regBadge {
+  background: var(--audit-dim);
+  color: var(--audit);
+  border: 1px solid var(--audit-glow);
+}
+
+.auditorBadge {
+  background: var(--accent-dim);
+  color: var(--accent);
+  border: 1px solid var(--accent-glow);
+}
+
+.regBadge:hover, .auditorBadge:hover { opacity: 0.8; }
+
+/* ── Balance card ──────────────────────────────────────────── */
+
+.balanceCard {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 24px 28px;
+}
+
+.balanceLabel {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  color: var(--text-3);
+  margin-bottom: 6px;
+}
+
+.balanceNum {
+  font-family: var(--font-mono);
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+}
+
+.balanceUnit {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-2);
+  margin-left: 6px;
+  letter-spacing: 0;
+}
+
+.balanceNote {
+  font-size: 11.5px;
+  color: var(--text-3);
+  margin-top: 8px;
+  font-family: var(--font-mono);
+}
+
+/* ── CTAs ──────────────────────────────────────────────────── */
+
+.ctaRow {
+  display: flex;
+  gap: 10px;
+}
+
+.cta {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 12px 16px;
+  background: var(--surface-1);
+  border: 1px solid var(--border-med);
+  border-radius: var(--r-lg);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-1);
+  text-decoration: none;
+  transition: background var(--ease), border-color var(--ease), transform var(--ease);
+}
+
+.cta:hover {
+  background: var(--surface-2);
+  border-color: var(--border-strong);
+}
+
+.cta:active { transform: translateY(1px); }
+
+.ctaPrimary {
+  background: var(--accent);
+  color: #07090F;
+  border-color: var(--accent);
+}
+
+.ctaPrimary:hover {
+  background: #00ebac;
+  border-color: #00ebac;
+}
+
+.ctaIcon { font-size: 15px; }
+
+/* ── Grid ──────────────────────────────────────────────────── */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.sectionTitle {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-1);
+}
+
+.sectionLink {
+  font-size: 11.5px;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.sectionLink:hover { text-decoration: underline; }
+
+.logCount {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-3);
+  background: var(--surface-3);
+  padding: 1px 7px;
+  border-radius: 10px;
+}
+
+/* ── Tx list ───────────────────────────────────────────────── */
+
+.txList { display: flex; flex-direction: column; gap: 1px; }
+
+.txRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: var(--r-sm);
+  text-decoration: none;
+  transition: background var(--ease);
+}
+
+.txRow:hover { background: var(--surface-2); }
+
+.txDir {
+  font-size: 14px;
+  color: var(--accent);
+  width: 18px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.txMain {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.txAmount {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-1);
+}
+
+.txBadge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 3px;
+  background: var(--accent-dim);
+  color: var(--accent);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.txBadgeLeak {
+  background: var(--exposed-dim);
+  color: var(--exposed);
+}
+
+/* ── Log list ──────────────────────────────────────────────── */
+
+.logList { display: flex; flex-direction: column; gap: 2px; }
+
+.logRow {
+  display: flex;
+  gap: 8px;
+  padding: 4px 2px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-2);
+  border-bottom: 1px solid var(--border);
+}
+
+.logRow:last-child { border-bottom: none; }
+
+.logTs { color: var(--text-3); flex-shrink: 0; }
+.logMsg { word-break: break-word; line-height: 1.55; }
+
+.log_ok   { color: var(--accent); }
+.log_bad  { color: var(--exposed); }
+.log_warn { color: var(--audit); }
+
+/* ── Owner balances ────────────────────────────────────────── */
+
+.balanceLine {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.balanceLineNum {
+  font-family: var(--font-mono);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+}
+
+.balanceLineUnit {
+  font-size: 12px;
+  color: var(--text-2);
+  font-weight: 500;
+}
+
+.ownerNote {
+  font-size: 11px;
+  color: var(--text-3);
+  line-height: 1.6;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+  .ctaRow { flex-direction: column; }
+}

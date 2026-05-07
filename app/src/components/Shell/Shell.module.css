@@ -1,0 +1,352 @@
+.shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ── Sidebar ─────────────────────────────────────────────── */
+
+.sidebar {
+  width: var(--sidebar-w);
+  flex-shrink: 0;
+  background: var(--surface-1);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 18px 16px 16px;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logoMark {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: var(--accent-dim);
+  border: 1px solid var(--accent-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: -1px;
+  flex-shrink: 0;
+}
+
+.logoName {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: var(--text-1);
+}
+
+/* ── Nav ─────────────────────────────────────────────────── */
+
+.nav {
+  flex: 1;
+  padding: 10px 8px;
+  overflow-y: auto;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 10px;
+  border-radius: var(--r-sm);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-2);
+  text-decoration: none;
+  transition: background var(--ease), color var(--ease);
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: none;
+  font-family: var(--font-sans);
+  text-align: left;
+}
+
+.navItem:hover {
+  background: var(--surface-2);
+  color: var(--text-1);
+}
+
+.navItem.active {
+  background: var(--surface-2);
+  color: var(--text-1);
+}
+
+.navItem.active .navIcon {
+  color: var(--accent);
+}
+
+.navIcon {
+  font-size: 14px;
+  width: 16px;
+  text-align: center;
+  flex-shrink: 0;
+  transition: color var(--ease);
+}
+
+.navLabel { flex: 1; }
+
+.navBadge {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: var(--audit-dim);
+  color: var(--audit);
+  border: 1px solid var(--audit-glow);
+}
+
+.navDivider {
+  height: 1px;
+  background: var(--border);
+  margin: 6px 10px;
+}
+
+/* ── Sidebar footer: persona switcher ───────────────────── */
+
+.sidebarFooter {
+  border-top: 1px solid var(--border);
+  padding: 10px 8px;
+  flex-shrink: 0;
+}
+
+.personaLabel {
+  font-size: 9.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  color: var(--text-3);
+  padding: 0 10px;
+  margin-bottom: 6px;
+}
+
+.personaOption {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 7px 10px;
+  border-radius: var(--r-sm);
+  border: none;
+  background: none;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--text-2);
+  cursor: pointer;
+  transition: background var(--ease), color var(--ease);
+  text-align: left;
+}
+
+.personaOption:hover {
+  background: var(--surface-2);
+  color: var(--text-1);
+}
+
+.personaOption.personaActive {
+  background: var(--surface-2);
+  color: var(--text-1);
+}
+
+.personaDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.personaAddr {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  color: var(--text-3);
+  margin-left: auto;
+}
+
+/* ── Main area ───────────────────────────────────────────── */
+
+.main {
+  flex: 1;
+  margin-left: var(--sidebar-w);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ── Topbar ──────────────────────────────────────────────── */
+
+.topbar {
+  height: var(--topbar-h);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 0 24px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-1);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.topbarStatus {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-2);
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--border-med);
+  background: var(--surface-2);
+}
+
+.topbarDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text-3);
+  flex-shrink: 0;
+}
+
+.topbarStatus.connected .topbarDot {
+  background: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-dim);
+}
+
+.topbarStatus.working .topbarDot {
+  background: var(--zk);
+  box-shadow: 0 0 0 2px var(--zk-dim);
+  animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.2; }
+}
+
+.topbarBalance {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-1);
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--border-med);
+  background: var(--surface-2);
+}
+
+.topbarBalanceLabel {
+  color: var(--text-3);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ── Page content ────────────────────────────────────────── */
+
+.content {
+  flex: 1;
+  padding: 28px 28px 56px;
+  max-width: 1100px;
+  width: 100%;
+}
+
+/* ── Activity strip ──────────────────────────────────────── */
+
+.activityStrip {
+  border-top: 1px solid var(--border);
+  background: var(--surface-1);
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.activityStripHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 16px 4px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.activityStripTitle {
+  font-size: 9.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  color: var(--text-3);
+}
+
+.activityStripToggle {
+  font-size: 10px;
+  color: var(--text-3);
+}
+
+.activityStripBody {
+  max-height: 130px;
+  overflow-y: auto;
+  padding: 2px 0 6px;
+}
+
+.activityStripEntry {
+  display: flex;
+  gap: 10px;
+  padding: 2px 16px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--text-2);
+  line-height: 1.55;
+}
+
+.activityStripEntry.ok   { color: var(--accent); }
+.activityStripEntry.bad  { color: var(--exposed); }
+.activityStripEntry.warn { color: var(--audit);   }
+
+.activityStripTs { color: var(--text-3); flex-shrink: 0; }
+
+.activityStripEmpty {
+  padding: 4px 16px 4px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--text-3);
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform var(--ease-slow);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .main {
+    margin-left: 0;
+  }
+}

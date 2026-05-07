@@ -1,0 +1,149 @@
+.card {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 28px;
+  max-width: 520px;
+  margin-bottom: 16px;
+}
+
+.icon {
+  font-size: 24px;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.cardTitle {
+  margin: 0 0 10px;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+.cardBody {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.7;
+  margin: 0 0 20px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-2);
+  padding: 10px 14px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+}
+
+.statusDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.cta {
+  width: 100%;
+  padding: 11px;
+  background: var(--accent);
+  color: #07090F;
+  border: none;
+  border-radius: var(--r);
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: background var(--ease), transform var(--ease);
+  margin-bottom: 12px;
+}
+
+.cta:hover:not(:disabled) { background: #00ebac; }
+.cta:active:not(:disabled) { transform: translateY(1px); }
+.cta:disabled { opacity: 0.60; cursor: not-allowed; }
+
+.ctaBusy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.spinner {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  border: 2px solid rgba(7, 9, 15, 0.25);
+  border-top-color: #07090F;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.proving {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  background: var(--zk-dim);
+  border: 1px solid var(--zk-glow);
+  border-radius: var(--r-sm);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--zk);
+  margin-bottom: 12px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.provingIcon { flex-shrink: 0; }
+
+.hint {
+  font-size: 11.5px;
+  color: var(--text-3);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Rotate key section */
+.rotateCard {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 22px 28px;
+  max-width: 520px;
+}
+
+.rotateTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-2);
+  margin-bottom: 8px;
+}
+
+.rotateBtn {
+  padding: 8px 16px;
+  background: var(--surface-3);
+  color: var(--text-1);
+  border: 1px solid var(--border-med);
+  border-radius: var(--r-sm);
+  font-size: 13px;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: background var(--ease), border-color var(--ease);
+}
+
+.rotateBtn:hover:not(:disabled) {
+  background: var(--surface-4);
+  border-color: var(--border-strong);
+}
+
+.rotateBtn:disabled { opacity: 0.35; cursor: not-allowed; }

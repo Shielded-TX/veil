@@ -1,0 +1,188 @@
+.page { display: flex; flex-direction: column; gap: 20px; }
+
+.pageHeader { display: flex; align-items: baseline; gap: 12px; margin-bottom: 4px; }
+
+.pageTitle {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+}
+
+.pageSubtitle { font-size: 13px; color: var(--text-3); }
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 16px;
+  align-items: start;
+}
+
+.formCol, .infoCol { display: flex; flex-direction: column; gap: 14px; }
+
+.cardTitle { font-size: 13px; font-weight: 600; }
+
+/* ── Recipient row ──────────────────────────────────────────── */
+
+.recipientRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0 16px;
+}
+
+.recipientLabel {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-2);
+  min-width: 24px;
+}
+
+.recipientValue {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.recipientHash { font-size: 10.5px; }
+
+.divider { height: 1px; background: var(--border); margin: 0 0 16px; }
+
+/* ── Deposit ID field ───────────────────────────────────────── */
+
+.proofIdField { margin-top: 14px; display: flex; flex-direction: column; gap: 5px; }
+
+.fieldLabel { font-size: 12px; font-weight: 500; color: var(--text-2); }
+
+.proofIdInput {
+  background: var(--surface-2);
+  border: 1px solid var(--border-med);
+  border-radius: var(--r-sm);
+  padding: 8px 12px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--text-1);
+  outline: none;
+  width: 120px;
+  transition: border-color var(--ease), box-shadow var(--ease);
+}
+
+.proofIdInput:focus {
+  border-color: var(--zk);
+  box-shadow: 0 0 0 2px var(--zk-dim);
+}
+
+.fieldHint { font-size: 11px; color: var(--text-3); line-height: 1.55; }
+
+/* ── Send button ────────────────────────────────────────────── */
+
+.sendBtn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 13px;
+  background: var(--accent);
+  color: #07090F;
+  border: none;
+  border-radius: var(--r);
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background var(--ease), transform var(--ease);
+  letter-spacing: -0.2px;
+}
+
+.sendBtn:hover:not(:disabled) { background: #00ebac; }
+.sendBtn:active:not(:disabled) { transform: translateY(1px); }
+.sendBtn:disabled { opacity: 0.38; cursor: not-allowed; }
+
+.sendBtnBusy { background: var(--zk); color: #fff; }
+.sendBtnBusy:hover:not(:disabled) { background: var(--zk); }
+
+.btnSpinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,0.25);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Privacy list ───────────────────────────────────────────── */
+
+.privacyList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.privacyItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+
+.privacyDot { color: var(--accent); flex-shrink: 0; font-size: 11px; margin-top: 2px; }
+
+.proofNote {
+  font-size: 11.5px;
+  color: var(--text-2);
+  line-height: 1.65;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Gate card ──────────────────────────────────────────────── */
+
+.gateCard {
+  max-width: 440px;
+  margin: 80px auto;
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 32px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.gateIcon { font-size: 28px; color: var(--text-3); }
+.gateTitle { font-size: 17px; font-weight: 700; }
+.gateBody { font-size: 13px; color: var(--text-2); line-height: 1.65; margin: 0; }
+
+.gateCta {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 9px 18px;
+  border: 1px solid var(--accent-glow);
+  border-radius: var(--r);
+  background: var(--accent-dim);
+  transition: opacity var(--ease);
+}
+
+.gateCta:hover { opacity: 0.8; }
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,116 @@
+.root { display: flex; flex-direction: column; gap: 6px; }
+
+.labelRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-2);
+}
+
+.balanceHint {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--text-3);
+}
+
+.inputWrap {
+  display: flex;
+  align-items: center;
+  background: var(--surface-2);
+  border: 1px solid var(--border-med);
+  border-radius: var(--r);
+  overflow: hidden;
+  transition: border-color var(--ease), box-shadow var(--ease);
+}
+
+.inputWrap:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-dim);
+}
+
+.inputWrap.error {
+  border-color: var(--exposed);
+  box-shadow: 0 0 0 2px var(--exposed-dim);
+}
+
+.input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 10px 14px;
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-1);
+  min-width: 0;
+  letter-spacing: -0.5px;
+}
+
+.input::placeholder { color: var(--text-3); font-weight: 400; }
+.input:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.unit {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-3);
+  padding: 0 12px 0 4px;
+  flex-shrink: 0;
+  letter-spacing: 0.04em;
+}
+
+.maxBtn {
+  background: var(--surface-3);
+  border: none;
+  border-left: 1px solid var(--border-med);
+  padding: 0 12px;
+  height: 100%;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  color: var(--text-2);
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: background var(--ease), color var(--ease);
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+
+.maxBtn:hover:not(:disabled) {
+  background: var(--surface-4);
+  color: var(--text-1);
+}
+
+.maxBtn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+.hint {
+  font-size: 11.5px;
+  padding: 6px 10px;
+  border-radius: var(--r-sm);
+  font-family: var(--font-mono);
+}
+
+.hint[data-tone="error"] {
+  background: var(--exposed-dim);
+  color: var(--exposed);
+  border: 1px solid rgba(255, 87, 87, 0.15);
+}
+
+.hint[data-tone="zk"] {
+  background: var(--zk-dim);
+  color: var(--zk);
+  border: 1px solid var(--zk-glow);
+}
+
+.hint[data-tone="ok"] {
+  background: var(--accent-dim);
+  color: var(--accent);
+  border: 1px solid var(--accent-glow);
+}

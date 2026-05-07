@@ -38,7 +38,7 @@ export default defineConfig({
             '@aztec/aztec.js/node',
             '@aztec/aztec.js/fields',
             '@aztec/aztec.js/addresses',
-            '@aztec/wallets/embedded',
+'@aztec/wallets/embedded',
             '@aztec/accounts/testing',
             '@aztec/foundation/curves/bn254',
             '@aztec/foundation/crypto/sync',

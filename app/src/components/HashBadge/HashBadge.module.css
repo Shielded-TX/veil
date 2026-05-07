@@ -1,0 +1,56 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--surface-2);
+  border: 1px solid var(--border-med);
+  border-radius: var(--r-sm);
+  padding: 4px 9px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-2);
+  cursor: pointer;
+  transition: background var(--ease), border-color var(--ease), color var(--ease);
+  white-space: nowrap;
+  font-weight: 400;
+}
+
+.badge:hover {
+  background: var(--surface-3);
+  border-color: var(--border-strong);
+  color: var(--text-1);
+}
+
+.badge.copied {
+  background: var(--accent-dim);
+  border-color: var(--accent-glow);
+  color: var(--accent);
+}
+
+.badge.empty {
+  cursor: default;
+  color: var(--text-3);
+  pointer-events: none;
+}
+
+.label {
+  font-size: 9.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-3);
+  padding-right: 4px;
+  border-right: 1px solid var(--border-med);
+}
+
+.hash { flex: 1; }
+
+.icon {
+  font-size: 10px;
+  color: var(--text-3);
+  flex-shrink: 0;
+  transition: color var(--ease);
+}
+
+.badge:hover .icon { color: var(--text-2); }
+.badge.copied .icon { color: var(--accent); }

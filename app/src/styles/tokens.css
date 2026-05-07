@@ -1,0 +1,66 @@
+/* =============================================================
+   VEIL — Design Tokens
+   Single source of truth. Import everywhere via styles.css.
+   ============================================================= */
+
+:root {
+  /* ── Surfaces ──────────────────────────────────────────── */
+  --bg:        #07090F;
+  --surface-1: #0D1117;
+  --surface-2: #141A24;
+  --surface-3: #1C2333;
+  --surface-4: #232D3F;
+
+  /* ── Borders ───────────────────────────────────────────── */
+  --border:        rgba(148, 163, 184, 0.07);
+  --border-med:    rgba(148, 163, 184, 0.13);
+  --border-strong: rgba(148, 163, 184, 0.24);
+
+  /* ── Text ──────────────────────────────────────────────── */
+  --text-1: #E2ECF7;
+  --text-2: #8DA0B8;
+  --text-3: #4D6280;
+
+  /* ── Primary accent ────────────────────────────────────── */
+  --accent:      #00D9A0;
+  --accent-dim:  rgba(0, 217, 160, 0.10);
+  --accent-glow: rgba(0, 217, 160, 0.22);
+
+  /* ── Privacy semantics ─────────────────────────────────── */
+  --shielded:     var(--accent);
+  --exposed:      #FF5757;
+  --exposed-dim:  rgba(255, 87, 87, 0.10);
+  --exposed-glow: rgba(255, 87, 87, 0.22);
+
+  /* ── Audit / disclosure ─────────────────────────────────── */
+  --audit:     #E8A830;
+  --audit-dim: rgba(232, 168, 48, 0.10);
+  --audit-glow: rgba(232, 168, 48, 0.22);
+
+  /* ── ZK proof states ───────────────────────────────────── */
+  --zk:      #8B7FFF;
+  --zk-dim:  rgba(139, 127, 255, 0.10);
+  --zk-glow: rgba(139, 127, 255, 0.22);
+
+  /* ── Persona stripes ───────────────────────────────────── */
+  --c-owner: #E8A830;
+  --c-alice: #818CF8;
+  --c-bob:   #34D399;
+
+  /* ── Typography ────────────────────────────────────────── */
+  --font-sans: -apple-system, 'Inter', BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', Menlo, Consolas, monospace;
+
+  /* ── Radius scale ──────────────────────────────────────── */
+  --r-sm: 6px;
+  --r:    10px;
+  --r-lg: 14px;
+
+  /* ── Shell geometry ────────────────────────────────────── */
+  --sidebar-w: 220px;
+  --topbar-h:  52px;
+
+  /* ── Motion ────────────────────────────────────────────── */
+  --ease: 160ms ease-out;
+  --ease-slow: 220ms ease-out;
+}
